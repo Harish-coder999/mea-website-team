@@ -1,0 +1,512 @@
+/* Custom Styles */
+*{
+    text-decoration: none;
+    list-style: none;
+}
+:root{
+  --bodyBg:#D9EAFD;
+  --formBg:#D9EAFD;
+  --textColor:#fff;
+  --primaryColor:#9AA6B2;
+  --paraColor:#5e6c79;
+  --paraColor:#74828f;
+
+}
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+   
+}
+#loader {
+  background: #000 url('background/loader.gif') no-repeat center center;
+ background-size: 30%;
+
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 1000000;
+
+}
+ 
+
+.sub-heading {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.para {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.map-container iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/*main form*/
+main{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 90%;
+  max-width: 550px;
+  margin: auto;
+  margin-top: 2em;
+}
+
+.sectionHeader{
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--primaryColor);
+  margin-bottom: .5em;
+}
+
+.heading,.sub-heading{
+  margin-bottom: .5em;
+  font-weight: bold;
+}
+
+.heading{
+  font-size: 2.5em;
+}
+
+.sub-heading{
+  text-align: left;
+}
+
+.contactForm{
+  display: grid;
+  gap: 3em;
+}
+
+form{
+  width: 100%;
+  margin-top: 1em;
+}
+
+.para{
+  color: var(--paraColor);
+  font-size: 1.1rem;
+  line-height: 1.5em;
+  margin-bottom: 1em;
+}
+
+.para2{
+  text-align: left;
+}
+
+.input{
+  width: 95%;
+  max-width: 700px;
+  border: none;
+  font-size: .9rem;
+  padding: 1em;
+  outline: none;
+  background-color: var(--formBg);
+  color: var(--paraColor);
+  border-radius: 10px;
+  border: 1px solid rgb(53, 53, 53);
+  margin-bottom: 1em;
+
+}
+
+.input:focus{
+  border: 1px solid var(--primaryColor);
+}
+
+.input::placeholder{
+  text-transform: capitalize;
+}
+
+.submit{
+  background-color: var(--primaryColor);
+  border: none;
+  color: var(--textColor);
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+
+.map-container{
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+.mapBg{
+  position: absolute;
+  background-color: var(--primaryColor);
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 90%;
+  border-radius: 20px;
+}
+
+.map{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  height: 90%;
+}
+
+.map iframe{
+  width: 100%;
+  height: 100%;
+}
+
+.contactMethod{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  text-align: left;
+}
+
+.method{
+  display: flex;
+  align-items: center;
+}
+
+.contactIcon{
+  font-size: 2rem;
+  color: var(--primaryColor);
+  width: 70px;
+}
+
+
+@media screen and (min-width:800px) {
+    main{
+        max-width: 1100px;
+    }
+    .contactForm{
+        grid-template-columns: 1fr 1fr;
+    }   
+
+    .contactMethod{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+
+.navbar-brand img {
+  margin-right: 10px;
+}
+
+/*header*/
+header {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 9%;
+  transition: background-color 0.5s ease;
+  background-color: transparent;
+  /* Initial background color */
+
+
+
+}
+
+header.scrolled {
+
+  background-color: #222831;
+  /* Background color after scrolling */
+}
+
+.dis {
+
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.lo {
+  display: flex;
+  align-items: center;
+
+}
+#mea{
+  padding-top: 10px;
+}
+.navlist {
+  display: flex;
+
+
+}
+
+
+.navlist a {
+  color: white;
+  margin-left: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: all .55s ease;
+  text-decoration: none;
+  list-style: none;
+
+}
+
+.navlist a:hover {
+  border-bottom: 2px solid white;
+}
+
+#menu-icon {
+  color: white;
+  font-size: 35px;
+  z-index: 10000;
+  cursor: pointer;
+  display: none;
+
+
+}
+ /*drop down */
+ .dropdown {
+  position: relative;
+}
+.dropdown a{
+color:white;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+ 
+  background-color: #000;
+
+  padding-left: 10px ;
+  list-style: none;
+  flex-direction: column;
+  width: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu li {
+  padding: 10px 30px;
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: #393e46;
+  color: #fff;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/*back image*/
+.back_image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.back_image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(40%);
+}
+
+.back_image h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .back_image h1 {
+      font-size: 2rem;
+  }
+}
+/*footer*/
+footer{
+  background-color: #9AA6B2;
+  padding-bottom: 30px;
+}
+.social-media_box{
+  max-width: 240px;
+}
+.social-media {
+   
+    display: flex;
+    max-width: 240px;
+    
+    
+}
+.social-icon{
+  font-size: 20px;
+}
+.social-media a{
+    justify-content: space-around;
+    
+ 
+    transition: all 0.3s ease;
+    text-decoration: none;
+    padding-right: 9px ;
+    padding-left: 9px;
+   
+    margin: 10px;
+    border-radius: 50%; 
+}
+.social-media a:hover {
+    background-color: #ffa400;
+    color: white;
+  }
+  .menu-link {
+     /* Makes the <a> behave like a block element */
+    
+
+    color: white;
+    text-decoration: none;
+   
+   
+   
+    transition: all 0.3s ease;
+}
+
+.menu-link:hover {
+ /* Background color on hover */
+    color:  #ffa400; /* Text color on hover */
+     /* Border on hover */
+}
+    /* Running Footer */
+          .ticker {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: black;
+            color: white;
+            padding:0px;
+            z-index: 1000;
+        }
+
+        .scrolling-text {
+            
+            color:white;
+            padding: 10px 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: ticker 10s linear infinite;
+            text-align: center;
+            border-radius: 10px 10px 10px 10px;
+            font-weight: bold;
+        }
+
+        @keyframes ticker {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+@media(max-width:930px) {
+  #menu-icon {
+    display: block;
+  }
+  header{background-color: #222831;}
+
+  .navlist {
+    position:absolute;
+    top: 100%;
+    left: 100%;
+    width: 50%;
+    height: auto;
+    background-color: black;
+    backdrop-filter:blur(10px);
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    border-radius: 10px;
+    
+    transition: all .55s ease;
+
+  } .navlist a {
+      margin-left: 0;
+      margin-top:15px ;
+      display: block;
+      color: white;
+      font-size: 1.5rem;
+    
+    }
+  
+    .navlist.open {
+      left: 0;
+    }
+  
+    .navlist a:hover {
+      background-color: transparent;
+     
+      border-bottom: #000 solid 2px;
+    }
+    video {
+      margin-top: 80px;
+    }
+    .back_image{
+      padding-top: 90px;
+    }
+    .dropdown-menu{
+      position: relative;
+      
+    }
+    .dropdown a{
+      font-size: 1rem;
+      color:white;
+    }
+    .dropdown li{
+      padding: 0px;
+    }
+    .ticker{
+        width: auto;
+    }
+   }
+   
+     
+@media(max-width:450px) {
+  .navlist {
+      width: 100%;}
+      .back_image h1{
+        font-size: 30px;
+      }
+    }
+
+
+
+      

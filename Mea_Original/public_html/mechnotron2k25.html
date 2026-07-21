@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mechnotron2k25</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+       
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+        <!--font-->
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+        <link rel="icon" href="logo.png" type="image/x-icon">
+   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+
+    <style>
+        /* General Styling */
+        * {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background-color: #EEEEEE;
+            color:white;
+            
+        }
+        .header-content2
+{
+  font-size: 24px;
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #0066ff, #73abff);
+  color: white;
+  border-radius: 10px;
+  margin: 50px auto;
+ 
+  cursor: pointer;
+  
+}
+.header-content2 a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+
+        .navbar-brand img {
+    margin-right: 10px;
+  }
+  #loader {
+  background: #000 url('background/loader.gif') no-repeat center center;
+ background-size: 30%;
+
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 1000000;
+
+}
+  /*header*/
+  header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 9%;
+    transition: background-color 0.5s ease;
+    background-color: transparent;
+   
+    /* Initial background color */
+  
+  
+  
+  }
+  
+  header.scrolled {
+  
+    background-color: #222831;
+    /* Background color after scrolling */
+  }
+  
+  .dis {
+  
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  
+  }
+  
+  .lo {
+    display: flex;
+    align-items: center;
+  
+  }
+  #mea{
+    padding-top: 10px;
+  }
+  
+  .navlist {
+    display: flex;
+  
+  
+  }
+  
+  
+  .navlist li a {
+    color: white;
+    margin-left: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .55s ease;
+    text-decoration: none;
+    list-style: none;
+  
+  }
+  
+  .navlist a:hover {
+    border-bottom: 2px solid white;
+  }
+  
+  #menu-icon {
+    color: white;
+    font-size: 35px;
+    z-index: 10000;
+    cursor: pointer;
+    display: none;
+  
+  
+  }
+  /*drop down */
+  .dropdown {
+    position: relative;
+}
+.dropdown a{
+  color:white;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 30%;
+    background-color: #000;
+
+    padding-left: 10px;
+    list-style: none;
+    flex-direction: column;
+    width: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu li {
+    padding: 10px 2px;
+}
+
+.dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #393e46;
+    color: #fff;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+  
+/*back image*/
+.back_image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.back_image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(40%);
+}
+
+.back_image h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .back_image h1 {
+      font-size: 2rem;
+  }
+}
+/*footer*/
+footer{
+    background-color: #9AA6B2;
+    padding-bottom: 30px;
+  }
+  .social-media_box{
+    max-width: 240px;
+  }
+  .social-media {
+     
+      display: flex;
+      max-width: 240px;
+      
+      
+  }
+  .social-icon{
+    font-size: 20px;
+  }
+  .social-media a{
+      justify-content: space-around;
+      
+   
+      transition: all 0.3s ease;
+      text-decoration: none;
+      padding-right: 9px ;
+      padding-left: 9px;
+     
+      margin: 10px;
+      border-radius: 50%; 
+  }
+  .social-media a:hover {
+      background-color: #ffa400;
+      color: white;
+    }
+    .menu-link {
+       /* Makes the <a> behave like a block element */
+      
+  
+      color: white;
+      text-decoration: none;
+     
+     
+     
+      transition: all 0.3s ease;
+  }
+  
+  .menu-link:hover {
+   /* Background color on hover */
+      color:  #ffa400; /* Text color on hover */
+       /* Border on hover */
+  }
+  @media(max-width:930px) {
+    #menu-icon {
+      display: block;
+    }
+    header{background-color: #222831;}
+  
+    .navlist {
+      position:absolute;
+      top: 100%;
+      left: 100%;
+      width: 50%;
+      height: auto;
+      background-color: #000;
+      backdrop-filter:blur(10px);
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+      border-radius: 10px;
+      
+      transition: all .55s ease;
+  
+    } .navlist a {
+        margin-left: 0;
+        margin-top:15px ;
+        display: block;
+        color: white;
+        font-size: 1.5rem;
+      
+      }
+    
+      .navlist.open {
+        left: 0;
+      }
+    
+      .navlist a:hover {
+        background-color: transparent;
+       
+        border-bottom: #000 solid 2px;
+      }
+      video {
+        margin-top: 80px;
+      }
+      .back_image{
+        padding-top: 90px;
+      }
+      .dropdown-menu{
+        position: relative;
+        
+      }
+      .dropdown a{
+    color:white;
+  }
+  .dropdown li{
+    font-size: 1rem;
+    padding: 0px;
+  }
+     }
+     
+       
+  @media(max-width:450px) {
+    .navlist {
+        width: 100%;}}
+
+
+        .header-content {
+ color: #000;
+  
+}
+        /* Container Styling */
+        .container2 {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            background: #D84040;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .container2 p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .container2 span {
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        /* Counter Section */
+        .wrapper {
+           
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px 0;
+            
+        }
+
+        .counter-num {
+            width: 250px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            background: #1D1616;
+            border-bottom: 10px solid #8E1616;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-in-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .counter-num:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+      
+
+        .counter-num span.num {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .counter-num span.text {
+            font-size: 1.2em;
+            color: #e0e0e0;
+        }
+
+        /* Swiper Section */
+        #swiper-section {
+            text-align: center;
+            padding: 40px 20px;
+            
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+                   
+             color: #000;
+        }
+
+        .swiper-container {
+            overflow: hidden; /* Prevent slides from contributing to the container width */
+    max-width: 100%;
+    width: 90%;
+            margin: 0 auto;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transform-origin: center;
+            animation: fadeIn 0.5s ease-in-out;
+            flex-shrink: 0; /* Prevent slides from shrinking unevenly */
+    width: auto;    /* Let Swiper calculate the slide width dynamically */
+    max-width: 300;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .swiper-slide img:hover {
+            transform: scale(1.05);
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            color: #fff;
+        }
+
+        .swiper-pagination-bullet {
+            background: #fff;
+            opacity: 0.7;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #007bff;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            .swiper-slide img {
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="loader">
+        
+    </div>
+    <header class="heaber ">
+
+        <div class="dis">
+            <div class="lo">
+                <img src="logo.png" alt="logo" height="50px" width="50px">
+            </div>
+            <div class="lo">
+                <h2 id="mea">MEA CIT</h2>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="navlist">
+                <li><a href="index.html">Home</a></li>
+                
+                <li class="dropdown text-white">
+                    <a>Achievement <i class="fa-solid fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="motorsports.html">Motorsports</a></li>
+                        <li><a href="mechnotron2k24.html">Mechnotron2k24</a></li>
+                         <li><a href="mechnotron2k25.html">Mechnotron2k25</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                   </ul>
+                <li><a href="eventpage.html">Event</a></li>
+                <li><a href="our_team.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+      <!--back image-->
+      <div class="back_image"><img src="pdf/back25.jpg" alt="logo"  width="100%" >
+        <h1>MECHNOTRON2K25</h1>
+       </div>
+    <!-- Content Section -->
+    <div class="container2">
+        <div class="header">
+            <h1>Mechnotron 2K25</h1>
+            <p>The National Level Technical Symposium</p>
+        </div>
+        <p>
+            The Department of Mechanical Engineering at CIT conducted its annual national-level technical symposium MECHNOTRON 2K25 on 21st March 2025 under the banner of the Mechanical Engineering Association (MEA). The event was envisioned to bring together young minds from various engineering institutions across the country to compete, collaborate, and contribute towards innovation in mechanical and allied engineering domains. The symposium comprised a total of 21 technical and non-technical events, meticulously planned and executed to test the creativity, critical thinking, and technical expertise of participants.
+        </p>
+        <div class="header-content2"> <a href="pdf/EVENT_REPORT.pdf" >REPORT DOWNLOAD<a></div>
+  
+    </div>
+
+    <!-- Counter Section -->
+    <div class="wrapper">
+        <div class="container counter-num">
+            
+            <span class="num" data-val="1300" inval="300">000</span>
+            <span class="text">Students participated</span>
+        </div>
+        <div class="container counter-num">
+            
+            <span class="num" data-val="27" inval="5000">000</span>
+            <span class="text">Offline Events</span>
+        </div>
+      
+        <div class="container counter-num">
+            
+            <span class="num" data-val="3" inval="5000">000</span>
+            <span class="text">Workshops and seminar</span>
+        </div>
+    </div>
+     <!-- Swiper Section -->
+    <section id="swiper-section">
+        <h2 class="section-title header-content">Event Posters</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Add your slides here -->
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0001.jpg" alt="Event 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0002.jpg" alt="Event 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0003.jpg" alt="Event 3">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0004.jpg" alt="Event 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0005.jpg" alt="Event 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0006.jpg" alt="Event 3">
+                </div>
+                
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0007.jpg" alt="Event 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0008.jpg" alt="Event 3">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0009.jpg" alt="Event 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0010.jpg" alt="Event 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0011.jpg" alt="Event 3">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0012.jpg" alt="Event 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0013.jpg" alt="Event 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0014.jpg" alt="Event 3">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0015.jpg" alt="Event 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0016.jpg" alt="Event 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0017.jpg" alt="Event 3">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0018.jpg" alt="Event 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0019.jpg" alt="Event 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0020.jpg" alt="Event 3">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0021.jpg" alt="Event 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0022.jpg" alt="Event 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0023.jpg" alt="Event 3">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0024.jpg" alt="Event 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0025.jpg" alt="Event 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0026.jpg" alt="Event 3">
+                </div>
+                <div class="swiper-slide">
+                    <img src="pdf/Mechnotron0027.jpg" alt="Event 1">
+                </div>
+              
+                <!-- Add more slides -->
+            </div>
+            <!-- Pagination and Navigation -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+    <!--footer-->
+    <footer class=" text-light pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-4">
+                    <h3 class="fw-bold">Address :</h3>
+                    <p class="pt-2">Coimbatore Institute Of Technology,
+                        Avinashi Rd, Civil Aerodrome Post,
+                         Coimbatore, 
+                         Tamil Nadu 641014</p>
+                    <div class="social-icon">
+                    <p class="mb-2"><a href="#" class="text-light  me-2"><i class="fa-solid fa-phone"></i></a>9488571718</p>
+                    <p ><a href="#" class="text-light  me-2"><i class="fa-regular fa-envelope"></i></a>citmea@gmail.com</p></div>
+                </div>
+                <div class="col text-lg-center">
+                    <h4>Menu</h4>
+                    <ul class="list-unstyled pt-2">
+                        <li class="py-1">
+                            <a href="home.html" class="menu-link">Home</a>
+                        </li>
+                        
+                        <li class="py-1">
+                            <a href="motorsports.html" class="menu-link">Motorsports</a>
+                        </li> <li class="py-1">
+                            <a href="mechontron2k24.html" class="menu-link">mechontron2k24</a>
+                        </li>
+                        <li class="py-1">
+                            <a href="gallery.html" class="menu-link">gallery</a>
+                        </li>
+                        <li class="py-1">
+                          <a href="eventpage.html" class="menu-link">Event</a>
+                      </li>
+                      <li class="py-1">
+                        <a href="our_team.html" class="menu-link">Team</a>
+                    </li>
+                        <li class="py-1">
+                            <a href="contact.html" class="menu-link">Contact</a>
+                        </li>
+                    </ul>
+
+                </div>
+                
+                
+                <div class="col-6 col-lg-3 text-lg-end social-media_box">
+                    <h4>Social Media Links</h4>
+                    <div class="social-media pt-2">
+                        <a href="#" class="text-light fs-1 me-3"><img src="unstop-logo.ico" alt="Unstop Apps" style="height: 36px; width: 36px;" clasfa-brands">
+                        </a>
+                       <a href="#" class="text-light fs-1 me-3"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-light fs-1 me-3"><i class="fa-brands fa-linkedin"></i></a>
+                     </div>
+                </div>
+                <hr>
+<div class="d-sm-flex justify-content-between py-1">
+    <p>2023 © MEA. All Rights Reserved. </p>
+   
+</div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        var loader=document.getElementById("loader");
+        window.addEventListener("load",function(){
+            loader.style.display="none";
+        })</script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+   <script src="script-mech.js"></script>
+    <!-- Swiper JS -->
+
+    
+   
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
