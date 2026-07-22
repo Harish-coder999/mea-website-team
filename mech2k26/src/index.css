@@ -1,0 +1,282 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark Glassmorphic Theme */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    /* Glassmorphic Cards */
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Golden Yellow Primary */
+    --primary: 48 100% 50%;
+    --primary-foreground: 222 47% 11%;
+
+    /* Deep Blue Secondary */
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 48 100% 50%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 48 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Gradients */
+    --gradient-mechanical: linear-gradient(
+      135deg,
+      hsl(222 47% 11% / 0.8) 0%,
+      hsl(217 33% 17% / 0.8) 100%
+    );
+    --gradient-industrial: linear-gradient(
+      135deg,
+      hsl(48 100% 50%) 0%,
+      hsl(217 91% 60%) 100%
+    );
+    --gradient-card: linear-gradient(
+      135deg,
+      hsl(222 47% 11% / 0.7) 0%,
+      hsl(217 33% 17% / 0.7) 100%
+    );
+
+    /* Shadows */
+    --shadow-industrial:
+      0 0 20px hsl(48 100% 50% / 0.3), 0 4px 20px hsl(0 0% 0% / 0.5);
+    --shadow-card: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-mechanical: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-transparent text-foreground;
+    overflow-x: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Industrial text effect for dark theme */
+  .industrial-text {
+    color: hsl(48 100% 50%);
+    text-shadow:
+      0 0 10px hsl(48 100% 50% / 0.5),
+      0 0 20px hsl(48 100% 50% / 0.3);
+    font-weight: 800;
+  }
+
+  .steel-text {
+    color: hsl(217 91% 60%);
+    text-shadow:
+      0 0 10px hsl(217 91% 60% / 0.5),
+      0 0 20px hsl(217 91% 60% / 0.3);
+    font-weight: 800;
+  }
+
+  .alert-text {
+    color: hsl(191, 87%, 56%);
+    text-shadow:
+      0 0 10px hsla(198, 63%, 31%, 0.5),
+      0 0 20px hsla(202, 79%, 42%, 0.3);
+    font-weight: 800;
+  }
+
+  /* Gear rotation animations */
+  @keyframes rotate-gear {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes rotate-gear-reverse {
+    0% {
+      transform: rotate(360deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes piston-slide {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .gear {
+    animation: rotate-gear 20s linear infinite;
+  }
+
+  .gear-reverse {
+    animation: rotate-gear-reverse 15s linear infinite;
+  }
+
+  .piston {
+    animation: piston-slide 2s ease-in-out infinite;
+  }
+
+  /* Welding Animations */
+  @keyframes weld-flash {
+    0%,
+    100% {
+      opacity: 0.5;
+      filter: brightness(1);
+    }
+
+    50% {
+      opacity: 1;
+      filter: brightness(2);
+      box-shadow: 0 0 20px hsl(48 100% 50%);
+    }
+
+    25% {
+      opacity: 0.8;
+    }
+
+    75% {
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes spark-fly {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translate(var(--tx), var(--ty)) scale(0);
+      opacity: 0;
+    }
+  }
+
+  .animate-weld-flash {
+    animation: weld-flash 0.1s infinite;
+  }
+
+  /* Countdown & Holographic Animations */
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hologram-pulse {
+    0%,
+    100% {
+      box-shadow:
+        0 0 10px rgba(255, 204, 0, 0.2),
+        inset 0 0 10px rgba(255, 204, 0, 0.1);
+    }
+
+    50% {
+      box-shadow:
+        0 0 20px rgba(255, 204, 0, 0.4),
+        inset 0 0 20px rgba(255, 204, 0, 0.2);
+    }
+  }
+
+  @keyframes scan-line {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+
+  .animate-hologram-pulse {
+    animation: hologram-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-scan-line {
+    animation: scan-line 2s linear infinite;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(222 47% 11%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(48 100% 50% / 0.5);
+  border-radius: 5px;
+  border: 2px solid hsl(222 47% 11%);
+}
+
+::-webkit-scrollbar-:hover {
+  background: hsl(48 100% 50%);
+  box-shadow: 0 0 10px hsl(48 100% 50%);
+}
