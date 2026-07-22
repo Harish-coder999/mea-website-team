@@ -1,0 +1,1 @@
+import{j as i,m as n}from"./index-CSugxdYs.js";const r=({children:t,width:e="fit-content"})=>i.jsx("div",{style:{position:"relative",width:e},children:i.jsx(n.div,{variants:{hidden:{opacity:0,y:75},visible:{opacity:1,y:0}},initial:"hidden",whileInView:"visible",viewport:{once:!0,margin:"-75px"},transition:{duration:.5,delay:.25},children:t})});export{r as R};
